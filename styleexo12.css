@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  #app {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #1c1c1c;
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+    color: white;
+  }
+
+  h1 {
+    text-align: center;
+    color: #3498db;
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+    color: #3498db;
+  }
+
+  input, select, button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    background-color: #29425c;
+    color: white;
+  }
+
+  input[type="date"], input[type="email"] {
+    background-color: #1e2a36; 
+  }
+
+  button {
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #2f7fb4;
+  }
+
+  .reservation-details {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #3a536b; 
+    border-radius: 10px;
+    color: white;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  .alert {
+    background-color: #f5230b; 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 14px;
+  }

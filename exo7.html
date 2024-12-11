@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case à Cocher avec Vue 3</title>
+  <script src="https://unpkg.com/vue@3.0.0"></script>
+</head>
+<body>
+  <div id="app">
+    <input type="checkbox" v-model="isChecked" id="checkbox">
+    <label for="checkbox">{{ isChecked ? 'Coché' : 'Décoché' }}</label>
+  </div>
+
+  <script>
+    const app=Vue.createApp({
+      data() {
+        return {
+          isChecked: false 
+        };
+      }
+    }).mount('#app'); 
+  </script>
+</body>
+</html>

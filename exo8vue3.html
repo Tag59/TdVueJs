@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html> 
+ 
+<head> 
+  <title>Vue.js 3 Example</title> 
+  <script src="https://unpkg.com/vue@3.0.0"></script>
+</head> 
+ 
+<body> 
+  <div id="app"> 
+    <h1>{{ compteur }}</h1> 
+    <button v-on:click="incrementerCompteur">Incrémenter</button> 
+    <button @click="decrementerCompteur">Décrémenter</button> 
+  </div> 
+ 
+  <script> 
+    const app = Vue.createApp({ 
+      data() { 
+        return { 
+          compteur: 0 //La valeur initiale du compteur est définie à 0 
+        } 
+      }, 
+      methods: { 
+        incrementerCompteur() { 
+          this.compteur++; //La méthode incrementerCompteur incrémente le compteur de 1 quand on appuie sur le bouton 
+        }, 
+        decrementerCompteur() { 
+          this.compteur--; //La méthode incrementerCompteur incrémente le compteur de 1 quand on appuie sur le bouton 
+        } 
+      } 
+    }); 
+ 
+    app.mount('#app'); 
+  </script> 
+</body> 
+ 
+</html> 

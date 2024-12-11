@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenue dans différentes langues</title>
+  <script src="https://unpkg.com/vue@3.0.0"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Welcome Bienvenue ¡Bienvenido!</h1>
+    <!--Boutons pour sélectionner la langue souhaitée-->
+    <button @click="changerLangue('en')">Anglais</button>&nbsp
+    <button @click="changerLangue('fr')">Français</button>&nbsp
+    <button @click="changerLangue('es')">Espagnol</button>&nbsp
+    <button @click="changerLangue('de')">Allemand</button>&nbsp
+    <button @click="changerLangue('jp')">Japonais</button>&nbsp
+    <button @click="changerLangue('ch')">Chinois</button>
+
+    <!--Message de bienvenue affiché selon la langue sélectionnée -->
+    <p>{{messageBienvenue}}</p>
+  </div>
+
+  <script>
+    const app=Vue.createApp({
+      data() {
+        return {
+          //L'anglais est la langue par défaut
+          langue:'en'
+        };
+      },
+      computed: {
+        //Différents messages à afficher en fonction de la langue choisie
+        messageBienvenue() {
+          if(this.langue === 'en'){
+            return "Welcome on my website!";
+          } else if (this.langue === 'fr'){
+            return "Bienvenue sur mon site!";
+          } else if (this.langue === 'es'){
+            return "¡Bienvenido a mi sitio web!";
+          } else if (this.langue === 'de'){
+            return "Willkommen auf meiner Website!";
+          } else if (this.langue === 'jp'){
+            return"Watashi no saito e yokoso!";
+          } else if(this.langue === 'ch'){
+            return "Huānyíng lai dao wo de wangzhan!";
+          }
+        }
+      },
+      methods: {
+        //Méthode pour changer la langue en fonction du bouton cliqué
+        changerLangue(nouvelleLangue) {
+          this.langue = nouvelleLangue;
+        }
+      }
+    }).mount('#app'); 
+  </script>
+</body>
+</html>

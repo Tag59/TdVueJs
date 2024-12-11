@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions avec v-if</title>
+  <script src="https://unpkg.com/vue@3.0.0"></script>
+</head>
+<body>
+  <div id="app"><!--conteneur avec ID "app"-->
+        <p v-if="isTrue">La condition est vraie</p><!--v-if pour confitionner l'affichage du message-->
+        <p v-else>La condition est fausse</p><!--affichage pour le cas contraire-->
+  </div>
+
+  <script>
+    const app=Vue.createApp({
+      data() {
+        return {
+            isTrue: true
+        };
+      },
+    })
+    const vm=app.mount('#app');
+    window.vm=vm;
+
+
+  </script>
+</body>
+</html>

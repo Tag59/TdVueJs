@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertisseur Celsius à Fahrenheit</title>
+  <!--Inclure la bibliothèque Vue 3-->
+  <script src="https://unpkg.com/vue@3.0.0"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Convertisseur de températures: Celsius à Fahrenheit</h1>
+
+    <!--Endroit où l'on entre la température en °C-->
+    <label for="celsius">Température en degrés Celsius</label>
+    <input type="number" v-model="celsius" id="celsius" placeholder="Entrez la température en °C">
+
+    <!--Message indiquant si l'eau bout à cette température -->
+    <p v-if="celsius >= 100">L'eau bout à cette température !</p>
+
+    <!--Affichage de la température convertie en Fahrenheit -->
+    <p>Température en degrés Fahrenheit : {{ celsiusToFahrenheit }} °F</p>
+  </div>
+
+  <script>
+    //Création de l'application
+    const app=Vue.createApp({
+      data() {
+        return {
+          //Temp en °C initialisée à 0
+          celsius: 0
+        };
+      },
+      computed: {
+        //Propriété calculée pour convertir Celsius en Fahrenheit
+        celsiusToFahrenheit() {
+          return (this.celsius * 9/5) + 32; // Formule de conversion
+        }
+      }
+    }).mount('#app'); //Montre l'application Vue sur l'élément avec l'ID "app"
+  </script>
+</body>
+</html>

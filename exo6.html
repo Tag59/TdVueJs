@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message de Bienvenue</title>
+  <script src="https://unpkg.com/vue@3.0.0"></script>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="nomUtilisateur">
+
+    <button @click="afficherMessage = true">Afficher le message de bienvenue</button>
+
+    
+    <p v-if="afficherMessage" v-bind:title="'Bienvenue, ' + nomUtilisateur + ' !'">
+      Bienvenue, {{ nomUtilisateur }} !
+    </p>
+  </div>
+
+  <script>
+    const app=Vue.createApp({
+      data() {
+        return {
+          nomUtilisateur: '',     
+          afficherMessage: false  
+        };
+      }
+    }).mount('#app'); 
+  </script>
+</body>
+</html>

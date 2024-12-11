@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compteur de clics avec Vue</title>
+    <script src="https://unpkg.com/vue@3.0.0"></script>
+</head>
+<body>
+    <div id="app"><!--conteneur avec ID "app"-->
+        <button v-on:click="incrementerCompteur">Cliquez-moi</button><!--bouton lié à méthode grâce à v-on:-->
+        <p>Vous avez cliqué {{compteur}} fois.</p><!--compteur-->
+    </div>
+    
+    <script>
+        const app= Vue.createApp({
+          data() {
+            return {
+              compteur: 0 //donnée de stockage initialisée à 0
+            };
+          },
+          methods: { //methode pour incrémenter compteur
+            incrementerCompteur() {
+              this.compteur++; 
+            }
+          }
+        }).mount('#app');//instance montée avec id app
+      </script>
+    
+</body>
+</html>

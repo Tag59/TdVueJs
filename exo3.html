@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculatrice de TVA</title>
+  <script src="https://unpkg.com/vue@3.0.0"></script>
+</head>
+<body>
+  <div id="app"><!--conteneur avec ID "app"-->
+    <input type="number" id="montantHT" v-model="montantHT"><!--Champ de saisie pour le montant HT -->
+    <p>Montant TTC : {{ montantTTC }} €</p> <!--Affichage du montant TTC-->
+  </div>
+
+  <script>
+    const app=Vue.createApp({
+      data() {
+        return {
+          montantHT: 0 //donnée pour stocker le montant ht
+        };
+      },
+      computed: {
+        montantTTC() {
+          let montantTTC = this.montantHT * 1.20;
+          return montantTTC.toFixed(2); //Arrondir à deux chiffres après la virgule
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

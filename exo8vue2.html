@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+  <title>Vue.js 2 Exemple</title> 
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script><!--Lien vers Vue2-->
+</head> 
+
+<body> 
+  <div id="app"> 
+    <h1>{{ compteur }}</h1> 
+    <button v-on:click="incrementerCompteur">Incrémenter</button> 
+    <button @click="decrementerCompteur">Décrémenter</button> 
+  </div> 
+
+  <script> 
+    const app = new Vue({  //Utilisation de `new Vue()` au lieu de `Vue.createApp()`
+      el: '#app',          //Spécification de l'élément monté directement dans l'instance
+      data: { 
+        compteur: 0 //La valeur initiale du compteur est définie à 0 
+      }, 
+      methods: { 
+        incrementerCompteur() { 
+          this.compteur++; //La méthode incrementerCompteur incrémente le compteur de 1 quand on appuie sur le bouton 
+        }, 
+        decrementerCompteur() { 
+          this.compteur--; //La méthode decrementerCompteur décrémente le compteur de 1 quand on appui sur le bouton 
+        } 
+      } 
+    }); 
+  </script> 
+<!--On note donc que les différences entre les deux versions sont: 
+1)Le script pour implémenter la version de Vue;
+2)la création de l'instance de Vue est faite différemment (new Vue pour Vue2 vs const app=Vue.createApp);
+3)le montage de l'application est réalisé différemment (el:'#app' pour Vue2 dans le début de l'instance créée vs app.mount('#app')en fin de script pour Vue3)
+4)la définition des données avec data se fait différement (data:{variable=0} pour Vue2 vs data(){return{variable:0}},).-->
+</body> 
+
+</html>

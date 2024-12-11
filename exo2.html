@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editeur de texte en temps réel</title>
+    <script src="https://unpkg.com/vue@3.0.0"></script>
+</head>
+<body>
+    <div id="app"><!--conteneur app-->
+        <textarea v-model="texte"></textarea><!--v-model pour la liaison entre texte et la donnée-->
+
+        <p>Votre texte: {{texte}}</p><!--affichage en temps réel-->
+    </div>
+    
+    <script>
+        const app= Vue.createApp({
+          data(){
+            return{
+                texte:''
+            };
+          }
+        }).mount('#app');
+      </script>
+    
+</body>
+</html>

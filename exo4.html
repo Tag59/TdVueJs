@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compteur de mots</title>
+  <script src="https://unpkg.com/vue@3.0.0"></script>
+</head>
+<body>
+  <div id="app"><!--conteneur avec ID "app"-->
+    <textarea v-model="texte"></textarea>
+
+    <p>Nombre de mots: {{ nbmots }}</p> <!--Affichage du nombre de mots-->
+  </div>
+
+  <script>
+    const app=Vue.createApp({
+      data() {
+        return {
+          texte:'',
+          nbmots: 0 //donnée pour stocker le montant ht
+        };
+      },
+      watch: {
+        texte(newText) {
+            this.nbmots = newText.split(' ').filter(n => n != '').length; //renvoie le nb de mots de newText
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
